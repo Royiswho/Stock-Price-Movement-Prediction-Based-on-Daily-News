@@ -119,8 +119,11 @@ validation, and 10% to test. The activation function is ReLU and SGD is used as
 the optimizer. After finishing training , the learning curves of the 3 model designs
 are obtained and shown below:
 
+3-flat-layer
 <img src="media/hidden_flat_3.png" width = "400" align="center">
+2-flat-layer 
 <img src="media/hidden_flat_2.png" width = "400" align="center">
+3-pyramid
 <img src="media/hidden_pyramid.png" width = "400" align="center">
 
 From the results above, it is obvious that the overfitting is a problem because the
