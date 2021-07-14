@@ -50,31 +50,42 @@ can be presented.
 ### 1.2 Data Description
 
 #### (a) Reuters News
+
 • Description
+
 This dataset comes from a Kaggle project, named as Reuters Articles for
 3500+ Stocks since 2017. The data belongs to Reuters, which is a business
 and financial news provider. The dataset includes news title, related stock,
 and its timestamp, which are important in this project.
 
 • URI
+
 https://www.kaggle.com/miguelaenlle/reuters-articles-for-3500-stocks-since-2017
 
 • Features
+
 stock: related stock ticker
 article_publish_date: the time that the news was published in UTC+0
 processed_header: simplified news headline
 
 • Sample
-<img src="media/sample_reuters.PNG" width = "400" align="center">
+
+<img src="media/sample_reuters.PNG" width = "700" align="center">
 
 #### (b) Stock Price
+
 • Description
+
 Stock price data can be downloaded through Python library, pandas_datareader,
 to access data in yahoo finance. To use the library’s read function, three
 parameters are required, which are stock ticker, start date and end date.
 
 • URI
+
 https://pandas-datareader.readthedocs.io/en/latest/
 
 • Sample
-<img src="media/sample_stock_price.PNG" width = "400" align="center">
+
+<img src="media/sample_stock_price.PNG" width = "700" align="center">
+
+
