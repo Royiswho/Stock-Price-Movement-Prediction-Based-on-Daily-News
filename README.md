@@ -86,6 +86,59 @@ https://pandas-datareader.readthedocs.io/en/latest/
 
 • Sample
 
-<img src="media/sample_stock_price.png" width = "600" align="center">
+<img src="media/sample_stock_price.png" width = "700" align="center">
 
+### 2.1 Data Processing
+Raw data of news and stock price percentage changes are loaded and matched for
+each date. Here is an example of stock BA (Boeing Co) below. The index column at
+left is the news published date. The processed_header column contains text data
+which will be taken as input. The columns start with “abs” or “rl”, like abs_rt_1
+or rl_rt_1, are the absolute or relative stock price percentage change in the next
+few days. The absolute stock price percentage change is only calculated based on
+the stock’s price, however, the relative change refers to the different between stock’s
+percentage change and stock market index’s percentage change. In order to exclude
+the impact of the market, this project uses relative stock’s price percentage change
+only to generate binary labels.
 
+<img src="media/labels.png" width = "700" align="center">
+
+In the next step, news data will be cleaned and stemmed and converted to bag of
+words. Stock’s price change data will be converted to 1 or 0, which means positive
+or negative price change, and used as prediction labels. The example below shows a
+part of bag of words.
+
+<img src="media/bow.png" width = "700" align="center">
+
+### 2.2 MLP: Hidden Layer Design
+I design 3 hidden-layer patterns, which are 3 flat layers, 2 flat layers and 3 pyramid
+layers. I am going to compare them and use the best one. For the number of nodes,
+in one layer, there are usually 2048 nodes because the input attributes reach 2162
+at most. For pyramid shape, I use 2048, 512, and 128 as the numbers of nodes.
+Before training, The original dataset is randomly separated 80% to training, 10% to
+validation, and 10% to test. The activation function is ReLU and SGD is used as
+the optimizer. After finishing training , the learning curves of the 3 model designs
+are obtained and shown below:
+
+<img src="media/hidden_flat_3.png" width = "400" align="center">
+<img src="media/hidden_flat_2.png" width = "400" align="center">
+<img src="media/hidden_pyramid.png" width = "400" align="center">
+
+From the results above, it is obvious that the overfitting is a problem because the
+train loss and validation loss diverge further and further instead of converging. In
+order to reduce overfitting, the 3 pyramid layer should be the best one and it will be
+used in the next step.
+
+### 2.3 MLP: Activation Function
+In the last step, the activation function is ReLU because it is popular. However,
+it is not clear if it is the best activation function. Next, I compare ReLU with
+ELU and Leaky ReLU. Actually, Tanh and Sigmod are popular as well, but they
+are saturated and not suitable for regularization and they are easily suffering from
+gradient vanishing, so they are not considered here. The learning curves for the three
+activation functions are shown below:
+
+<img src="media/ReLU.png" width = "400" align="center">
+<img src="media/ELU.png" width = "400" align="center">
+<img src="media/Leaky_ReLU.png" width = "400" align="center">
+
+Leaky ReLU shows further divergence again, so it will not be considered. Comparing ReLU and ELU, they are similar in divergence, but ReLU shows higher accuracy
+(69.7%) than the accuracy of ELU (66.7%). Therefore, I will keep using ReLU.
