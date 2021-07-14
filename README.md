@@ -290,11 +290,11 @@ accuracy differences are shown in the chart below:
 
 • MLP Accuracy over Baseline
 
-<img src="media/MLP Accuracy over Baseline.PNG" width = "700" align="center">
+<img src="media/MLP Accuracy over Baseline.PNG" width = "400" align="center">
 
 • MLP Average Accuracy for Each Stock
 
-<img src="media/MLP Average Accuracy for Each Stock.PNG" width = "700" align="center">
+<img src="media/MLP Average Accuracy for Each Stock.PNG" width = "400" align="center">
 
 Moreover, if we take a look at the the average accuracy for different terms over
 baseline, we can find a curve opening downwards. It means, with the term extending,
@@ -312,11 +312,11 @@ NBC’s accuracy performance over baseline.
 
 • NBC Accuracy over Baseline
 
-<img src="media/NBC Accuracy over Baseline.PNG" width = "700" align="center">
+<img src="media/NBC Accuracy over Baseline.PNG" width = "400" align="center">
 
 • NBC Average Accuracy for Each Stock
 
-<img src="media/NBC Average Accuracy for Each Stock.PNG" width = "700" align="center">
+<img src="media/NBC Average Accuracy for Each Stock.PNG" width = "400" align="center">
 
 Since NBC is also trained based on each word, so its performance is similar to
 MLP’s performance. If we take a look at the the average accuracy for different terms
@@ -334,7 +334,7 @@ stock can be found in the table below:
 
 • Performance Comparison: MLP vs NBC
 
-<img src="media/MLP vs NBC.PNG" width = "700" align="center">
+<img src="media/MLP vs NBC.PNG" width = "400" align="center">
 
 Although MLP is better in accuracy, it takes much more time to train models and
 consumes huge computational resources to optimize models. In the production, MLP
@@ -350,7 +350,7 @@ and the related stock, it can make prediction for 6 terms. I am going to test th
 system’s usability with 4 new data about Deutsche Bank (DB). The figure below
 shows the prediction details:
 
-<img src="media/systemtest.PNG" width = "700" align="center">
+<img src="media/systemtest.PNG" width = "400" align="center">
 
 With the results above, the users can make investment decision based on different
 investment terms. And if the system is used for screening all the stocks, it will be a
