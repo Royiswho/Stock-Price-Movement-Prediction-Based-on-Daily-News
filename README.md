@@ -86,6 +86,6 @@ https://pandas-datareader.readthedocs.io/en/latest/
 
 • Sample
 
-<img src="media/sample_stock_price.PNG" width = "700" align="center">
+<img src="media/sample_stock_price.png" width = "600" align="center">
 
 
