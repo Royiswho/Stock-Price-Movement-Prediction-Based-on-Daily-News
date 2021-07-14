@@ -276,7 +276,7 @@ are shown below:
 
 • Baseline Accuracy
 
-<img src="media/baseline_accuracy.PNG" width = "700" align="center">
+<img src="media/baseline_accuracy.PNG" width = "400" align="center">
 
 ### 3.2 MLP Performance
 
